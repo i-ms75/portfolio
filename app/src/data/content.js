@@ -74,7 +74,7 @@ export const projectsContent = {
                 ]
             },
             tech: ["React", "Redux", "OpenAI API", "Tailwind CSS"],
-            github: "https://github.com/i-ms75/netflix-gpt",
+            github: "https://github.com/i-ms75/NetflixGpt",
             live: null
         },
         {
