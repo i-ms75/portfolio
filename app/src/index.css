@@ -1,86 +1,321 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 @theme {
-  /* Color Palette - Deep Charcoal + Electric Blue */
-  --color-charcoal-950: #050505;
-  --color-charcoal-900: #0f0f0f;
-  --color-charcoal-800: #1a1a1a;
-  --color-charcoal-700: #2a2a2a;
-  --color-charcoal-600: #3a3a3a;
-  
-  --color-electric-600: #2563eb;
-  --color-electric-500: #3b82f6;
-  --color-electric-400: #60a5fa;
-  --color-electric-300: #93c5fd;
-  
-  --color-slate-300: #cbd5e1;
-  --color-slate-400: #94a3b8;
-  --color-slate-500: #64748b;
-  
-  /* Font Family */
-  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  /* VS Code Dark Theme Colors */
+  --color-vscode-bg: #1e1e1e;
+  --color-vscode-sidebar: #252526;
+  --color-vscode-activity: #333333;
+  --color-vscode-tab-active: #1e1e1e;
+  --color-vscode-tab-inactive: #2d2d2d;
+  --color-vscode-tab-border: #252526;
+  --color-vscode-panel: #1e1e1e;
+  --color-vscode-statusbar: #007acc;
+  --color-vscode-titlebar: #3c3c3c;
+  --color-vscode-text: #d4d4d4;
+  --color-vscode-text-dim: #858585;
+  --color-vscode-accent: #007acc;
+  --color-vscode-selection: #264f78;
+  --color-vscode-line-highlight: #2f3139;
+  --color-vscode-border: #3c3c3c;
+  --color-vscode-scrollbar: #424242;
+  --color-vscode-scrollbar-hover: #4f4f4f;
+  --color-vscode-hover: #2a2d2e;
+
+  /* Syntax Highlighting Colors */
+  --color-syntax-keyword: #569cd6;
+  --color-syntax-string: #ce9178;
+  --color-syntax-function: #dcdcaa;
+  --color-syntax-comment: #6a9955;
+  --color-syntax-number: #b5cea8;
+  --color-syntax-type: #4ec9b0;
+  --color-syntax-variable: #9cdcfe;
+  --color-syntax-property: #9cdcfe;
+  --color-syntax-bracket: #ffd700;
+  --color-syntax-operator: #d4d4d4;
+  --color-syntax-tag: #569cd6;
+  --color-syntax-attr: #92d1a3;
+  --color-syntax-punctuation: #808080;
+  --color-syntax-class: #4ec9b0;
+  --color-syntax-constant: #4fc1ff;
+
+  /* Icon Colors */
+  --color-icon-active: #ffffff;
+  --color-icon-inactive: #858585;
+  --color-icon-folder: #dcb67a;
+  --color-icon-jsx: #519aba;
+  --color-icon-json: #cbcb41;
+  --color-icon-md: #755838;
+  --color-icon-css: #563d7c;
+  --color-icon-ts: #2b7489;
+  --color-icon-git: #f05032;
+
+  /* Button Colors */
+  --color-vscode-button: #007acc;
+  --color-vscode-button-hover: #1c8cd9;
+  --color-vscode-button-secondary: #3a3d41;
+  --color-vscode-button-secondary-hover: #45494e;
+
+  /* Font Families */
+  --font-mono: 'Fira Code', 'Cascadia Code', 'Consolas', 'Monaco', monospace;
+  --font-sans: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
 }
 
-/* Base Styles */
+/* ===== Base Styles ===== */
 html {
   scroll-behavior: smooth;
 }
 
 body {
   font-family: var(--font-sans);
-  background-color: var(--color-charcoal-950);
-  color: var(--color-slate-300);
+  background-color: var(--color-vscode-bg);
+  color: var(--color-vscode-text);
   margin: 0;
-  min-height: 100vh;
-  line-height: 1.6;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Custom Scrollbar */
+#root {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+/* ===== Light Theme ===== */
+.light-theme {
+  --color-vscode-bg: #ffffff;
+  --color-vscode-sidebar: #f3f3f3;
+  --color-vscode-activity: #e8e8e8;
+  --color-vscode-tab-active: #ffffff;
+  --color-vscode-tab-inactive: #ececec;
+  --color-vscode-tab-border: #f3f3f3;
+  --color-vscode-panel: #ffffff;
+  --color-vscode-statusbar: #007acc;
+  --color-vscode-titlebar: #dddddd;
+  --color-vscode-text: #333333;
+  --color-vscode-text-dim: #717171;
+  --color-vscode-accent: #005fb8;
+  --color-vscode-selection: #add6ff;
+  --color-vscode-line-highlight: #eff6fc;
+  --color-vscode-border: #e5e5e5;
+  --color-vscode-scrollbar: #c1c1c1;
+  --color-vscode-scrollbar-hover: #929292;
+  --color-vscode-hover: #e8e8e8;
+
+  /* Light Syntax */
+  --color-syntax-keyword: #0000ff;
+  --color-syntax-string: #a31515;
+  --color-syntax-function: #795e26;
+  --color-syntax-comment: #008000;
+  --color-syntax-number: #098658;
+  --color-syntax-type: #267f99;
+  --color-syntax-variable: #001080;
+  --color-syntax-property: #001080;
+  --color-syntax-bracket: #0431fa;
+  --color-syntax-operator: #333333;
+  --color-syntax-tag: #800000;
+  --color-syntax-attr: #e50000;
+  --color-syntax-punctuation: #333333;
+  --color-syntax-class: #267f99;
+  --color-syntax-constant: #0070c1;
+
+  /* Light Icons */
+  --color-icon-active: #424242;
+  --color-icon-inactive: #888888;
+}
+
+/* ===== Custom Scrollbar ===== */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 10px;
+  height: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--color-charcoal-900);
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--color-charcoal-600);
-  border-radius: 4px;
+  background: var(--color-vscode-scrollbar);
+  border-radius: 0;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-electric-500);
+  background: var(--color-vscode-scrollbar-hover);
 }
 
-/* Selection */
+::-webkit-scrollbar-corner {
+  background: var(--color-vscode-bg);
+}
+
+/* ===== Selection ===== */
 ::selection {
-  background-color: var(--color-electric-500);
-  color: white;
+  background-color: var(--color-vscode-selection);
+  color: inherit;
 }
 
-/* Focus States for Accessibility */
+/* ===== Focus States ===== */
 *:focus-visible {
-  outline: 2px solid var(--color-electric-400);
-  outline-offset: 2px;
+  outline: 1px solid var(--color-vscode-accent);
+  outline-offset: -1px;
 }
 
-/* Gradient Text Utility */
-.gradient-text {
-  background: linear-gradient(135deg, var(--color-electric-400), var(--color-electric-300));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+/* ===== Animations ===== */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }
 
-/* Glow Effect */
-.glow {
-  box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-.glow-hover:hover {
-  box-shadow: 0 0 30px rgba(59, 130, 246, 0.5);
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-12px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes typewriter {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+.animate-slide-in {
+  animation: slideInLeft 0.3s ease-out forwards;
+}
+
+.cursor-blink {
+  animation: blink 1.1s step-end infinite;
+}
+
+/* ===== Code Block Styles ===== */
+.code-line {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  line-height: 1.6;
+  padding: 0 16px;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.code-line:hover {
+  background-color: var(--color-vscode-line-highlight);
+}
+
+.line-number {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--color-vscode-text-dim);
+  text-align: right;
+  user-select: none;
+  min-width: 40px;
+  padding-right: 16px;
+  opacity: 0.5;
+}
+
+/* ===== Markdown Preview Styles ===== */
+.md-preview h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-vscode-text);
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--color-vscode-border);
+}
+
+.md-preview h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-vscode-accent);
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.md-preview h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--color-vscode-text);
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.md-preview p {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--color-vscode-text);
+  margin-bottom: 1rem;
+}
+
+.md-preview ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.md-preview li {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--color-vscode-text);
+  margin-bottom: 0.25rem;
+}
+
+.md-preview a {
+  color: var(--color-vscode-accent);
+  text-decoration: none;
+}
+
+.md-preview a:hover {
+  text-decoration: underline;
+}
+
+.md-preview code {
+  font-family: var(--font-mono);
+  background-color: var(--color-vscode-hover);
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 0.9em;
+}
+
+.md-preview pre {
+  font-family: var(--font-mono);
+  background-color: var(--color-vscode-sidebar);
+  border: 1px solid var(--color-vscode-border);
+  border-radius: 6px;
+  padding: 16px;
+  margin: 1rem 0;
+  overflow-x: auto;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* ===== Terminal Styles ===== */
+.terminal-text {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* ===== Transitions ===== */
+.transition-theme {
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .code-line {
+    font-size: 12px;
+  }
+  .line-number {
+    font-size: 12px;
+    min-width: 30px;
+    padding-right: 8px;
+  }
 }
