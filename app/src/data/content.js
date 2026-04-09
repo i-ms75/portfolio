@@ -7,8 +7,8 @@ export const heroContent = {
     tagline: "I connect systems during the day. At night, I theorize about quantum entanglement—same thing, really.",
     subtitle: "Software Engineer specializing in scalable APIs, data architecture, and making distributed systems actually talk to each other.",
     cta: {
-        primary: "View My Work",
-        secondary: "Get In Touch"
+        primary: "View Projects",
+        secondary: "Contact Me"
     }
 };
 
@@ -18,6 +18,13 @@ export const aboutContent = {
         "Three years into this journey at Novo Nordisk, and I've discovered that software engineering is a lot like physics, both are about finding elegant patterns in chaos. Timing matters, systems interact in unexpected ways, and debugging feels like solving a mystery of the universe.",
         "I've built scalable APIs, wrestled with microservices, and earned an Exemplar Award in 2024 for cross-department knowledge sharing, because apparently explaining complex systems to non-engineers without their eyes glazing over is a superpower.",
         "When I'm not orchestrating data pipelines or convincing Azure and AWS to play nice, you'll find me exploring quantum mechanics (the original distributed system), carving through mountain roads on my motorcycle, or unwinding with stand-up comedy specials and movies because after debugging code all day, I deserve to let someone else do the thinking."
+    ],
+    whatIDo: [
+        "🔗 Building scalable APIs & microservices at Novo Nordisk",
+        "🚀 Designing data pipelines & integration architectures",
+        "☁️ Orchestrating cloud infrastructure on Azure & AWS",
+        "🧠 Exploring quantum mechanics in my spare time",
+        "🏍️ Carving mountain roads on my motorcycle"
     ],
     highlights: [
         { label: "Years Experience", value: "3+" },
@@ -53,7 +60,7 @@ export const projectsContent = {
     subtitle: "Things I've built that actually work (most of the time)",
     projects: [
         {
-            id: 1,
+            id: 0,
             title: "Netflix GPT",
             standard: {
                 description: "A responsive React application featuring GPT-powered movie recommendations. Integrated OpenAI APIs to provide intelligent, context-aware suggestions based on user preferences.",
@@ -78,7 +85,7 @@ export const projectsContent = {
             live: null
         },
         {
-            id: 2,
+            id: 1,
             title: "FastAPI Migration POC",
             standard: {
                 description: "Led a proof-of-concept replacing MuleSoft with FastAPI for high-performance API development. Implemented Redis caching and Amazon SQS for async processing.",
@@ -113,7 +120,7 @@ export const footerContent = {
         github: "https://github.com/i-ms75",
         linkedin: "https://www.linkedin.com/in/msingh75"
     },
-    copyright: `© ${new Date().getFullYear()} Manmohan Kushwaha. Crafted with React, Tailwind, and an unreasonable amount of coffee.`
+    copyright: `© ${new Date().getFullYear()} Manmohan Kushwaha. Crafted with React, Tailwind, claude and an unreasonable amount of coffee.`
 };
 
 export const navLinks = [
@@ -122,3 +129,59 @@ export const navLinks = [
     { name: "Projects", href: "#projects" },
     { name: "Contact", href: "#contact" }
 ];
+
+// VS Code file tree structure
+export const fileTree = [
+    {
+        name: "src",
+        type: "folder",
+        isOpen: true,
+        children: [
+            {
+                name: "components",
+                type: "folder",
+                isOpen: true,
+                children: [
+                    { name: "Home.jsx", type: "file", fileKey: "home" },
+                    { name: "Skills.jsx", type: "file", fileKey: "skills" }
+                ]
+            },
+            {
+                name: "pages",
+                type: "folder",
+                isOpen: true,
+                children: [
+                    { name: "About.md", type: "file", fileKey: "about" }
+                ]
+            }
+        ]
+    },
+    {
+        name: "data",
+        type: "folder",
+        isOpen: true,
+        children: [
+            { name: "projects.json", type: "file", fileKey: "projects" }
+        ]
+    },
+    {
+        name: "styles",
+        type: "folder",
+        isOpen: true,
+        children: [
+            { name: "contact.css", type: "file", fileKey: "contact" }
+        ]
+    },
+    { name: "README.md", type: "file", fileKey: "about" },
+    { name: "package.json", type: "file", fileKey: "package" }
+];
+
+// Tab definitions
+export const tabDefinitions = {
+    home: { name: "Home.jsx", icon: "jsx", path: "src > components > Home.jsx" },
+    about: { name: "About.md", icon: "md", path: "src > pages > About.md" },
+    projects: { name: "projects.json", icon: "json", path: "data > projects.json" },
+    skills: { name: "Skills.jsx", icon: "jsx", path: "src > components > Skills.jsx" },
+    contact: { name: "contact.css", icon: "css", path: "styles > contact.css" },
+    package: { name: "package.json", icon: "json", path: "package.json" }
+};
