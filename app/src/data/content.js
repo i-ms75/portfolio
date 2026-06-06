@@ -115,7 +115,6 @@ export const projectsContent = {
 export const footerContent = {
     tagline: "Building bridges between systems, one API at a time.",
     email: "mkush575@gmail.com",
-    phone: "+919845987946",
     social: {
         github: "https://github.com/i-ms75",
         linkedin: "https://www.linkedin.com/in/msingh75"
