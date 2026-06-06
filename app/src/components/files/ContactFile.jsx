@@ -72,11 +72,6 @@ export default function ContactFile() {
                 <Value href={`mailto:${footerContent.email}`}>{footerContent.email}</Value>
                 <Punct>;</Punct>
             </SyntaxLine>
-            <SyntaxLine indent={1}>
-                <Property>phone</Property><Punct>: </Punct>
-                <Value href={`tel:${footerContent.phone}`}>{footerContent.phone}</Value>
-                <Punct>;</Punct>
-            </SyntaxLine>
             <SyntaxLine>
                 <Bracket>{'}'}</Bracket>
             </SyntaxLine>
@@ -137,23 +132,6 @@ export default function ContactFile() {
                         </div>
                         <div className="text-sm font-medium group-hover:underline" style={{ color: 'var(--color-vscode-accent)' }}>
                             {footerContent.email}
-                        </div>
-                    </a>
-
-                    {/* Phone Card */}
-                    <a
-                        href={`tel:${footerContent.phone}`}
-                        className="p-4 rounded-lg transition-all hover:scale-[1.02] group"
-                        style={{
-                            backgroundColor: 'var(--color-vscode-sidebar)',
-                            border: '1px solid var(--color-vscode-border)',
-                        }}
-                    >
-                        <div className="text-xs uppercase tracking-wider mb-2" style={{ color: 'var(--color-vscode-text-dim)' }}>
-                            Phone
-                        </div>
-                        <div className="text-sm font-medium group-hover:underline" style={{ color: 'var(--color-vscode-accent)' }}>
-                            {footerContent.phone}
                         </div>
                     </a>
 
