@@ -27,7 +27,7 @@ export const aboutContent = {
         "🏍️ Carving mountain roads on my motorcycle"
     ],
     highlights: [
-        { label: "Years Experience", value: "3+" },
+        { label: "Years Experience", value: "3.5+" },
         { label: "Company", value: "Novo Nordisk" },
         { label: "Award", value: "Exemplar 2024" }
     ]
@@ -40,12 +40,12 @@ export const techStackContent = {
         {
             name: "Core",
             description: "The languages that pay the bills",
-            items: ["Python", "JavaScript", "Java", "SQL"]
+            items: ["Java", "JavaScript", "Python", "SQL"]
         },
         {
             name: "Integration & Cloud",
             description: "Making systems shake hands across the internet",
-            items: ["FastAPI", "Azure", "AWS", "Docker", "Redis", "Kafka"]
+            items: ["Spring Boot", "Azure", "AWS", "Docker", "Redis"]
         },
         {
             name: "Frontend",
