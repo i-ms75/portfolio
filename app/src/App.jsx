@@ -1,4 +1,5 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
+import { reportUserInfo } from './lib/api';
 import { PhilosophyProvider } from './context/PhilosophyContext';
 import { ThemeProvider } from './context/ThemeContext';
 import TitleBar from './components/TitleBar';
@@ -18,6 +19,11 @@ function App() {
     const [sidebarOpen, setSidebarOpen] = useState(true);
     const [activeSidebarSection, setActiveSidebarSection] = useState('explorer');
     const [terminalOpen, setTerminalOpen] = useState(true);
+
+    // Run the geolocation API(s) in the browser and report to the backend, once.
+    useEffect(() => {
+        reportUserInfo();
+    }, []);
 
     const openFile = useCallback((fileKey) => {
         if (!openTabs.includes(fileKey)) {
