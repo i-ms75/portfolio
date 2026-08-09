@@ -61,31 +61,56 @@ export const projectsContent = {
     projects: [
         {
             id: 0,
-            title: "Netflix GPT",
+            title: "OTP Service",
             standard: {
-                description: "A responsive React application featuring GPT-powered movie recommendations. Integrated OpenAI APIs to provide intelligent, context-aware suggestions based on user preferences.",
+                description: "A Spring Boot + Redis microservice that gates sensitive actions behind multi-owner OTP approval. One request fans out a unique 6-digit code to every configured approver by email; all codes must be collected and submitted together to pass.",
                 details: [
-                    "Built with React 18 and modern Hooks architecture",
-                    "Integrated GPT API for natural language movie search",
-                    "Implemented Tailwind CSS for responsive, elegant UI",
-                    "State management with Redux Toolkit"
+                    "Java 17 + Spring Boot with a stateless /generate and /verify REST API",
+                    "OTPs stored only as HMAC-SHA256 digests in Redis with a 5-minute TTL",
+                    "Constant-time verification, 3-attempt lockout, and single-use records",
+                    "Dockerized and shipped via GitHub Actions → GHCR → EC2 on version tags"
                 ]
             },
             philosophical: {
-                description: "A meditation on choice paralysis in the age of infinite content. Let an AI decide what you watch while you contemplate whether free will was ever real.",
+                description: "Trust, distributed. No single person holds the keys—consensus is enforced in code, and the secret exists only in transit, never at rest. A study in verifying without remembering.",
                 details: [
-                    "An exploration of outsourcing decision-making to algorithms",
-                    "Questions whether 'recommendation' is just manipulation with better UX",
-                    "The interface is a mirror—what you search reveals who you are",
-                    "Redux state as metaphor: all our choices are just reducers on previous states"
+                    "Authority split across many owners so no one hand can turn the lock alone",
+                    "Codes live as hashes: the system can confirm truth it can never reveal",
+                    "TTL as impermanence—every secret is born already expiring",
+                    "The service trusts no client; the boundary is the whole point"
                 ]
             },
-            tech: ["React", "Redux", "OpenAI API", "Tailwind CSS"],
-            github: "https://github.com/i-ms75/NetflixGpt",
+            tech: ["Java", "Spring Boot", "Redis", "Docker"],
+            github: "https://github.com/i-ms75/otpservice",
             live: null
         },
         {
             id: 1,
+            title: "Document Processor",
+            standard: {
+                description: "A Spring Boot service that ingests PDFs, stores them in Amazon S3, and processes them asynchronously via Amazon SQS. Uploads return immediately while a queue listener downloads each file and extracts its text with Apache PDFBox.",
+                details: [
+                    "Java 17 + Spring Boot with a multipart /pdf upload and presigned-URL download API",
+                    "S3 for object storage, SQS (@SqsListener) to decouple upload from processing",
+                    "Apache PDFBox for text extraction off the request thread",
+                    "Spring Cloud AWS integration plus a PostgreSQL/JPA persistence layer"
+                ]
+            },
+            philosophical: {
+                description: "Patience as architecture. The upload finishes the moment the work begins—the file waits in a queue, processed when the system is ready, not when you are. A pipeline that separates receiving from understanding.",
+                details: [
+                    "Queues are a promise: what is accepted now will be understood later",
+                    "Decoupling as humility—the fast path refuses to pretend it did the hard work",
+                    "A presigned URL is trust with an expiry date",
+                    "Extraction is interpretation: the document exists, but its meaning must be pulled out"
+                ]
+            },
+            tech: ["Java", "Spring Boot", "AWS S3", "AWS SQS", "PDFBox"],
+            github: "https://github.com/i-ms75/documentProcessor",
+            live: null
+        },
+        {
+            id: 2,
             title: "FastAPI Migration POC",
             standard: {
                 description: "Led a proof-of-concept replacing MuleSoft with FastAPI for high-performance API development. Implemented Redis caching and Amazon SQS for async processing.",
